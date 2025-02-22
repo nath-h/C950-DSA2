@@ -9,4 +9,30 @@ with open('WGUPS Package File.csv') as csvfile:
         package = Package(row[0], row[1], row[2], row[3], row[4], row[5], row[6], None, row[7])
         hash_map.add(int(row[0]), package)
 
-hash_map.print()
+#######distance table reader########
+addresses = []
+
+with open ('WGUPS Distance Table.csv') as csvfile:
+    read_dist_csv = csv.reader(csvfile, delimiter=',')
+
+    for row_idx, row in enumerate(read_dist_csv):
+         addresses.append(row[0])
+
+print(addresses)
+with open('WGUPS Distance Table.csv') as csvfile:
+    read_distance_csv = csv.reader(csvfile, delimiter=',')
+
+
+
+    for row_idx, row in enumerate(read_distance_csv):
+
+        for col_idx, column in enumerate(row):
+
+
+
+                if col_idx < len(addresses):
+
+                     address_1 = addresses[row_idx]
+                     address_2 = addresses[col_idx]
+
+                     print(f"Distance between {address_1} and {address_2}: {column} miles")
