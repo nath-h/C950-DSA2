@@ -11,4 +11,4 @@ class Package:
         self.package_notes = package_notes if package_notes else None
 
     def __str__(self):
-        return f"Package ID: {self.package_id}, Address: {self.address}, City: {self.city},  State: {self.state}, Zip Code: {self.zip_code}, Deadline: {self.deadline}, Package Weight: {self.package_weight}, Delivery Status: {self.delivery_status}, Package Notes: {self.package_notes} "
+        return f"Package ID: {self.package_id}, Address: {self.address}, City: {self.city},  State: {self.state}, Zip Code: {self.zip_code}, Deadline: {self.deadline}, Package Weight: {self.package_weight}, Delivery Status: {self.delivery_status}, Package Notes: {self.package_notes}"

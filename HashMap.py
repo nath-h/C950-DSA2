@@ -1,3 +1,6 @@
+#from csvreader import hash_map
+
+
 class HashMap:
     def __init__(self):
         self.size = 41
@@ -47,4 +50,8 @@ class HashMap:
                 for pair in item:
                  print(str(pair[1]))
 
+    def __str__(self):
+        #return str(self.map)
+        return '\n'.join([f" {str(value)}" for value in self.map])
 
+#print(hash_map)

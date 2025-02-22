@@ -8,18 +8,23 @@ with open('WGUPS Package File.csv') as csvfile:
     for row in readCSV:
         package = Package(row[0], row[1], row[2], row[3], row[4], row[5], row[6], None, row[7])
         hash_map.add(int(row[0]), package)
+        print(package)
+
+
+
+
 
 #######distance table reader########
 addresses = []
 
-with open ('WGUPS Distance Table.csv') as csvfile:
+with open ('WGUPS addressCSV.csv') as csvfile:
     read_dist_csv = csv.reader(csvfile, delimiter=',')
 
-    for row_idx, row in enumerate(read_dist_csv):
-         addresses.append(row[0])
+    for row, row_idx in enumerate(read_dist_csv):
+         addresses.append(row_idx[1])
 
 print(addresses)
-with open('WGUPS Distance Table.csv') as csvfile:
+with open('WGUPS distanceCSV.csv') as csvfile:
     read_distance_csv = csv.reader(csvfile, delimiter=',')
 
 
