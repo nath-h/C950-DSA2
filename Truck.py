@@ -5,9 +5,10 @@ from HashMap import *
 from csvreader import *
 
 class Truck:
-    def __init__(self, truck_id, packages, departure_time, return_time, miles_driven, at_hub):
+    def __init__(self, truck_id, packages, packages_on_truck, departure_time, return_time, miles_driven, at_hub):
         self.truck_id = truck_id
         self.packages = packages
+        self.packages_on_truck = HashMap()
         self.departure_time = departure_time if departure_time else timedelta(hours=8, minutes=0, seconds=0)
         self.return_time = return_time if return_time else timedelta(hours=17, minutes=0, seconds=0)
         self.miles_driven = miles_driven if miles_driven else 0

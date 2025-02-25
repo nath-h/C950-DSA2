@@ -41,3 +41,4 @@ with open('WGUPS distanceCSV.csv') as csvfile:
                      address_2 = addresses[col_idx]
 
                      print(f"Distance between {address_1} and {address_2}: {column} miles")
+

@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66d72147-e5cd-42ee-93af-44cb07c51194" name="Changes" comment="Commit with bug, do not use this version">
-      <change afterPath="$PROJECT_DIR$/WGUPS addressCSV.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WGUPS distanceCSV.csv" afterDir="false" />
+    <list default="true" id="66d72147-e5cd-42ee-93af-44cb07c51194" name="Changes" comment="Bug fixed, truck object created">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HashMap.py" beforeDir="false" afterPath="$PROJECT_DIR$/HashMap.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages.py" beforeDir="false" afterPath="$PROJECT_DIR$/Packages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Truck.py" beforeDir="false" afterPath="$PROJECT_DIR$/Truck.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WGUPS Distance Table.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WGUPS Distance Table2.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/csvreader.py" beforeDir="false" afterPath="$PROJECT_DIR$/csvreader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="working" />
+        <entry key="$PROJECT_DIR$" value="4b0b57d983434854319f7274231e0615a52d792e" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,30 +53,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.HashMap.executor": "Run",
-    "Python.Main.executor": "Run",
-    "Python.Packages.executor": "Run",
-    "Python.Truck.executor": "Run",
-    "Python.csvreader.executor": "Run",
-    "Python.csvreader2.executor": "Run",
-    "Python.distance-lookup-csv.executor": "Run",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "4b0b57d9",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/nholm/PycharmProjects/PythonProject",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.inline.completion",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.HashMap.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Packages.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Truck.executor&quot;: &quot;Run&quot;,
+    &quot;Python.csvreader.executor&quot;: &quot;Run&quot;,
+    &quot;Python.csvreader2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.distance-lookup-csv.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;working&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nholm/Desktop/Coding course/JetBrains-Discord-Integration-2.1.5.242.zip&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;discord-application&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\nholm\PycharmProjects\PythonProject" />
@@ -112,7 +105,20 @@
       <workItem from="1740196625798" duration="13473000" />
       <workItem from="1740210295084" duration="35000" />
       <workItem from="1740210480890" duration="708000" />
-      <workItem from="1740245014404" duration="6936000" />
+      <workItem from="1740245014404" duration="7057000" />
+      <workItem from="1740253018685" duration="37000" />
+      <workItem from="1740255034826" duration="2026000" />
+      <workItem from="1740436243719" duration="196000" />
+      <workItem from="1740441004360" duration="331000" />
+      <workItem from="1740441343268" duration="98000" />
+      <workItem from="1740441445605" duration="127000" />
+      <workItem from="1740441578411" duration="162000" />
+      <workItem from="1740441747102" duration="21000" />
+      <workItem from="1740441773291" duration="127000" />
+      <workItem from="1740441906905" duration="154000" />
+      <workItem from="1740442068171" duration="20000" />
+      <workItem from="1740442093203" duration="129000" />
+      <workItem from="1740442231696" duration="5708000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -170,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740209860454</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Bug fixed, truck object created">
+      <option name="closed" value="true" />
+      <created>1740252941954</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1740252941954</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,16 +205,17 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Part A and B complete" />
     <MESSAGE value="Commit with bug, do not use this version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit with bug, do not use this version" />
+    <MESSAGE value="Bug fixed, truck object created" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fixed, truck object created" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PythonProject$HashMap.coverage" NAME="HashMap Coverage Results" MODIFIED="1740249465882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$HashMap.coverage" NAME="HashMap Coverage Results" MODIFIED="1740255304388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PythonProject$distance_lookup_csv.coverage" NAME="distance-lookup-csv Coverage Results" MODIFIED="1740208242469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/PythonProject$Main.coverage" NAME="Main Coverage Results" MODIFIED="1740252104360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$Main.coverage" NAME="Main Coverage Results" MODIFIED="1740447382717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PythonProject$Truck.coverage" NAME="Truck Coverage Results" MODIFIED="1740251629658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PythonProject$csvreader2.coverage" NAME="csvreader2 Coverage Results" MODIFIED="1740207835643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PythonProject$Packages.coverage" NAME="Packages Coverage Results" MODIFIED="1740251169576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PythonProject$test.coverage" NAME="test Coverage Results" MODIFIED="1740245786659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/PythonProject$csvreader.coverage" NAME="csvreader Coverage Results" MODIFIED="1740249654955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$csvreader.coverage" NAME="csvreader Coverage Results" MODIFIED="1740255388131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
