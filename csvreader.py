@@ -1,3 +1,4 @@
+'''
 import csv
 from HashMap import *
 from Packages import *
@@ -16,16 +17,30 @@ with open('WGUPS Package File.csv') as csvfile:
 
 #######distance table reader########
 addresses = []
+def get_distance2(address1, address2):
+    addresses = []
+    distance_matrix = []
+    with open ('WGUPS addressCSV.csv') as csvfile:
+      read_dist_csv = list(csv.reader(csvfile, delimiter=','))
+    addresses = read_dist_csv[0]
 
-with open ('WGUPS addressCSV.csv') as csvfile:
-    read_dist_csv = csv.reader(csvfile, delimiter=',')
 
     for row, row_idx in enumerate(read_dist_csv):
          addresses.append(row_idx[1])
 
 print(addresses)
-with open('WGUPS distanceCSV.csv') as csvfile:
-    read_distance_csv = csv.reader(csvfile, delimiter=',')
+def get_distance(address1, address2):
+    addresses = []
+    distance_matrix = []
+    with open('WGUPS distanceCSV.csv') as csvfile:
+     read_distance_csv = list(csv.reader(csvfile, delimiter=','))
+    addresses = read_distance_csv[0]
+    distance_matrix = read_distance_csv[1:]
+    try:
+        index_1 = addresses.index(address1)
+        index_2 = addresses.index(address2)
+    except ValueError:
+        return f"Error: One or both addresses not found in csv."
 
 
 
@@ -40,5 +55,6 @@ with open('WGUPS distanceCSV.csv') as csvfile:
                      address_1 = addresses[row_idx]
                      address_2 = addresses[col_idx]
 
-                     print(f"Distance between {address_1} and {address_2}: {column} miles")
+                     return print(f"Distance between {address_1} and {address_2}: {column} miles")
 
+'''
