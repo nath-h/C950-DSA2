@@ -1,8 +1,5 @@
-from datetime import timedelta
-
 from Packages import *
 from HashMap import *
-from csvreader import *
 
 class Truck:
     def __init__(self, truck_id, packages, packages_on_truck, departure_time, return_time, miles_driven, at_hub):
