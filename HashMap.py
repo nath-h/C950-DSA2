@@ -1,6 +1,3 @@
-#from csvreader import hash_map
-
-
 class HashMap:
     def __init__(self):
         self.size = 41
