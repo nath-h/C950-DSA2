@@ -6,7 +6,7 @@ from csvreader import *
 
 class Truck:
     def __init__(self, truck_id, packages, packages_on_truck, departure_time, return_time, miles_driven, at_hub):
-        self.truck_id = truck_id
+        self.truck_id = truck_id if truck_id else 0
         self.packages = packages
         self.packages_on_truck = HashMap()
         self.departure_time = departure_time if departure_time else timedelta(hours=8, minutes=0, seconds=0)

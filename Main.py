@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta
 import Truck
 from HashMap import *
 from Packages import *
@@ -97,9 +98,9 @@ truck1 = Truck(1, [1, 13, 14, 15, 16, 19, 20, 29, 30, 31, 33, 34, 35, 37, 39, 40
 #print(truck1)
 truck2 = Truck(2, [2, 3, 4, 5, 7, 8, 10, 11, 12, 17, 18, 21, 22, 23, 36, 38], [], timedelta(hours=8, minutes=0, seconds=0), '', 0, True)
 #print(truck2)
-truck3 = Truck(3, [6, 9, 24, 25, 26, 27, 28, 32], [], timedelta(hours=9, minutes=30, seconds=0), '', 0, True)
+truck3 = Truck(3, [6, 9, 24, 25, 26, 27, 28, 32], [], timedelta(hours=9, minutes=5, seconds=0), '', 0, True)
 #print(truck3)
-truck4 = Truck(4, [1, 2, 3], [], timedelta(hours=8, minutes=0, seconds=0), '',   0, True)
+#truck4 = Truck(4, [1, 2, 3], [], timedelta(hours=8, minutes=0, seconds=0), '',   0, True)
 ### Package Requirements ###
 '''
 Truck1(departs 8am): 1, 13, 14, 15[priority 9am], 16, 19, 20, 29, 30, 31, 33, 34, 35, 37, 40 #Leave at 8am, package 15 deadline is 9am. Priority: 15, 1, 13, 14, 16, 20, 29, 30, 31, 34, 37, 40
@@ -137,7 +138,14 @@ Package 40: Deadline: 10:30am
 def load_packages(truck):
     truck.packages_on_truck = HashMap()
     for pkg in truck.packages:
-      HashMap.add(truck.packages_on_truck, pkg, hash_map.get(pkg))
+        package_obj = hash_map.get(pkg)
+        if package_obj.deadline_delta is None:
+            package_obj.convert_deadline()
+        hash_map.get(pkg).delivery_status = "En route"
+        hash_map.get(pkg).departure_time = truck.departure_time
+        HashMap.add(truck.packages_on_truck, pkg, package_obj)
+        package_obj.truck_id = truck.truck_id
+
 
     return truck.packages_on_truck
 
@@ -156,7 +164,7 @@ def calculate_delivery_time(speed, distance):
 load_packages(truck1)
 load_packages(truck2)
 load_packages(truck3)
-load_packages(truck4)
+#load_packages(truck4)
 #truck1.packages_on_truck.print()
 #deliver_package(truck1, 1)
 #truck1.packages_on_truck.print()
@@ -227,6 +235,17 @@ def delivery_algorithm(truck, address1, address2):
                 package_9.address = '410 S State St'
 
 
+        if current_location == '5383 South 900 East #104':
+            current_package.delivery_status = 'Delivered'
+            current_package.delivery_time = truck.current_time
+            deliver_package(truck, min_distance_package_id)
+
+            if truck.packages:
+                delivery_algorithm(truck, current_location, '3060 Lester St')
+            return
+
+
+
 
 
 
@@ -254,7 +273,7 @@ def delivery_algorithm(truck, address1, address2):
         current_package.delivery_time = truck.current_time
         deliver_package(truck, min_distance_package_id)
 
-        if not truck.packages:
+        if not truck.packages and truck.truck_id != 3:
             print("All done! Returning to hub")
             _, distance_to_hub = calculate_route(min_distance_address, '4001 South 700 East')
             print(f"Distance back to hub: {distance_to_hub}")
@@ -279,7 +298,7 @@ print(truck2.packages)
 if not truck1.packages:
     truck3.current_time = truck1.current_time
     print(truck3.departure_time)
-    delivery_algorithm(truck3, '4001 South 700 East', '4001 South 700 East')
+    delivery_algorithm(truck3, '4001 South 700 East', '5383 South 900 East #104')
 print(round(truck1.miles_driven, 1), round(truck2.miles_driven, 1), round(truck3.miles_driven, 1), round(round(truck1.miles_driven, 1) + round(truck2.miles_driven, 1) + round(truck3.miles_driven, 1), 1))
 tot_miles = truck1.miles_driven + truck2.miles_driven + truck3.miles_driven
 print(round(tot_miles, 1))
@@ -290,8 +309,80 @@ print(truck2.return_time)
 
 
 hash_map.print()
+def time_conversion(time_requested):
+    if "AM" in time_requested:
+        time_part = time_requested.replace("AM",  "").strip()  # Get "10:30"
+        hours, minutes = map(int, time_part.split(":"))
+        return timedelta(hours=hours, minutes=minutes)
+    else:
+        (h, m, s) = time_requested.split(":")
+        h = int(h)
+        m = int(m)
+        s = int(s)
+        return timedelta(hours=h, minutes=m, seconds=s)
+#Prompt user for input:
+print("Please pick an option for what you would like displayed:")
+print("[1] Print a single package")
+print("[2] Print all packages")
+print("[0] Exit the program \n")
+user_input = int(input())
+time_requested = input("Please enter a time, using the format HH:MM:SS: ")
+if user_input == 0:
+    print("Exiting program. Thank you!")
+
+if user_input == 1:
+    #time_requested = input("Please enter a time, using the format HH:MM:SS: ")
+    convert_time = time_conversion(time_requested)
+    find_package_id = int(input("Enter package ID: "))
+    package = hash_map.get(find_package_id)
+    if package.deadline_delta is  None:
+        package.convert_deadline()
+    if convert_time > package.delivery_time:
+     temp_status = "Delivered"
+     print(f"Time requested: {convert_time}, Delivery time: {package.delivery_time}, Delivery status: {temp_status}")
+     print(f"Final status: {hash_map.get(find_package_id)}")
+
+    if package.departure_time < convert_time < package.delivery_time:
+
+        package.delivery_status = "En route"
+        print(f"Time requested: {convert_time}, Expected delivery time: {package.delivery_time}, Delivery status: {temp_status}, Deadline: {package.deadline_delta}")
+        print(f"Final status: {hash_map.get(find_package_id)}")
+
+    if convert_time < package.departure_time:
+        temp_status = "At hub"
+    print(f"Time requested: {convert_time}, Expected departure time: {package.departure_time}, Expected delivery time: {package.delivery_time}, Current status: {temp_status}, Deadline: {package.deadline_delta}")
+    print(f"Final status: {hash_map.get(find_package_id)}")
+
+
+
+if user_input == 2:
+        #time_requested = input("Please enter a time, using the format HH:MM:SS: ")
+    for package_id in range(1, 41):
+        convert_time = time_conversion(time_requested)
+        package = hash_map.get(package_id)
+        if package.deadline_delta is None:
+            package.convert_deadline()
+        if convert_time > package.delivery_time:
+            temp_status = "Delivered"
+          #  print(f"Time requested: {convert_time}, Delivery time: {package.delivery_time}, Delivery status: {package.delivery_status}")
+           # print(f"Final status: {hash_map.get(package_id)}")
+
+
+        if package.departure_time < convert_time < package.delivery_time:
+            temp_status = "En route"
+           # print(f"Time requested: {convert_time}, Expected delivery time: {package.delivery_time}, {package.delivery_status}, Deadline: {package.deadline_delta}")
+           # print(f"Final status: {hash_map.get(package_id)}")
+
+        if convert_time < package.departure_time:
+            temp_status = "At hub"
+           # print(f"Time requested: {convert_time}, Expected departure time: {package.departure_time}, Expected delivery time: {package.delivery_time}, Current status: {package.delivery_status}, Deadline: {package.deadline_delta}")
+        print(f"Time requested: {convert_time}, Expected departure time: {package.departure_time}, Expected delivery time: {package.delivery_time}, Current status: {temp_status}, Deadline: {package.deadline_delta}")
+        print(f"Final status: {hash_map.get(package_id)}")
 
 
 
 
 
+#package.user_lookup(1)
+
+#hash_map.print()
